@@ -20,10 +20,9 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - "~/Desktop/inception/website:/var/www/html"
+      - "/home/saich/data/website:/var/www/html"
     depends_on:
       - mariadb
-      - redis
     networks:
       - frontend
       - backend
@@ -47,7 +46,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "~/Desktop/inception/mariadb:/var/lib/mysql"
+      - "/home/saich/data/mariadb:/var/lib/mysql"
     networks:
       - backend
     restart: always
@@ -56,6 +55,6 @@ services:
       WP_DATABASE_NAME: ${WP_DATABASE_NAME}
       WP_DATABASE_USR:  ${WP_DATABASE_USR}
       WP_DATABASE_PWD:  ${WP_DATABASE_PWD}
-  networks:
-    frontend:
-    backend:
+networks:
+  frontend:
+  backend:
