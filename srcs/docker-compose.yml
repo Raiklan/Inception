@@ -5,7 +5,6 @@ services:
     build: requirements/nginx/
     container_name: nginx
     ports:
-      - "80:80"
       - "443:443"
     volumes:
       - "/home/saich/data/website:/var/www/html"
