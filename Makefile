@@ -9,9 +9,9 @@ stop:
 	@ docker-compose -f srcs/docker-compose.yml down
 
 clean: stop
-	@ rm -rf ~/home/saich/data
+	@ sudo rm -rf /home/saich/data
 
-prune: clean
+prune: stop
 	@ docker system prune -f
 
 reload: 
