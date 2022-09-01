@@ -2,6 +2,8 @@ NAME = inception
 
 all: prune reload
 
+linux:
+	@ sudo service mysql stop
 stop:
 	@ docker-compose -f srcs/docker-compose.yml down
 
